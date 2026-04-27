@@ -5,8 +5,8 @@ my_analytics:
     postgres_dev:
       type: postgres
       host: 127.0.0.1
-      port: 5432
-      user: dbt_user
+      port: 15432
+      user: dbadmin
       password: "{{ env_var('POSTGRES_PASSWORD') }}"
       dbname: bi_db
       schema: dbt_dev
@@ -16,7 +16,7 @@ my_analytics:
       type: clickhouse
       host: 127.0.0.1
       port: 8123
-      user: default
+      user: usr
       password: "{{ env_var('CLICKHOUSE_PASSWORD') }}"
       schema: dbt_dev
       secure: false

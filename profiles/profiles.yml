@@ -1,0 +1,23 @@
+my_analytics:
+  target: postgres_dev
+
+  outputs:
+    postgres_dev:
+      type: postgres
+      host: 127.0.0.1
+      port: 5432
+      user: dbt_user
+      password: "{{ env_var('POSTGRES_PASSWORD') }}"
+      dbname: bi_db
+      schema: dbt_dev
+      threads: 4
+
+    clickhouse_dev:
+      type: clickhouse
+      host: 127.0.0.1
+      port: 8123
+      user: default
+      password: "{{ env_var('CLICKHOUSE_PASSWORD') }}"
+      schema: dbt_dev
+      secure: false
+      threads: 4

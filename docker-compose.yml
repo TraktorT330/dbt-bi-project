@@ -1,0 +1,11 @@
+services:
+  dbt:
+    image: my-dbt
+    network_mode: host
+    working_dir: /usr/app/dbt
+    volumes:
+      - ./projects/my_analytics:/usr/app/dbt
+      - ./profiles:/root/.dbt:ro
+    env_file:
+      - .env
+    entrypoint: ["dbt"]

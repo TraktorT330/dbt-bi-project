@@ -5,7 +5,7 @@ my_analytics:
     postgres_dev:
       type: postgres
       host: 127.0.0.1
-      port: 15432
+      port: 5432
       user: dbadmin
       password: "{{ env_var('POSTGRES_PASSWORD') }}"
       dbname: bi_db
